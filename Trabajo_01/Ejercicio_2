@@ -1,0 +1,7 @@
+public static void main(String[] args) {
+ Scanner scanner = new Scanner(System.in);
+ System.out.print("Ingrese un número: ");
+ int numero = scanner.nextInt();
+ System.out.println("El número ingresado es: " + numero);
+ scanner.close();
+}
