@@ -6,7 +6,7 @@ public class Ejercicio_1 {
         for (int i = 0; i < n - 1; i++) {
             for (int j = 0; j < n - i - 1; j++) {
                 if (arreg[j] > arreg[j + 1]) {
-                    // Intercambiar arr[j] y arr[j+1]
+                    // Intercambiar arreg[j] y arreg[j+1]
                     int temp = arreg[j];
                     arreg[j] = arreg[j + 1];
                     arreg[j + 1] = temp;
