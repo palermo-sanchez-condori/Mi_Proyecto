@@ -14,7 +14,16 @@
  * - Si tenemos el arreglo [38, 27, 43, 3, 9, 82, 10]
  *   1. Se divide en [38, 27, 43] y [3, 9, 82, 10]
  *   2. Se mezclan para obtener [3, 9, 10, 27, 38, 43, 82]
- * 
+ *
+ * Ejercicio 1
+ * Tienes un archivo con 1 millón de números enteros desordenados (más grande que tu memoria RAM).
+ *   Ejercicio:
+ *
+ * Divide el archivo en bloques de 100.000 números.
+ *
+ * Ordena cada bloque con un algoritmo interno (ej. quicksort).
+ *
+Usa un algoritmo de mezcla balanceada (k-way merge) para unir los bloques en un archivo final ordenado.
  */
 
 /* EL ALGORITMO DE FUSION NATURAL
