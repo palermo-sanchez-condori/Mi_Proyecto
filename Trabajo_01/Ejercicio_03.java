@@ -24,6 +24,12 @@
  * Ordena cada bloque con un algoritmo interno (ej. quicksort).
  *
 Usa un algoritmo de mezcla balanceada (k-way merge) para unir los bloques en un archivo final ordenado.
+    Un banco recibe 10 archivos de transacciones diarios (cada uno con 100 MB).
+Ejercicio:
+
+Ordena todas las transacciones por fecha.
+
+Aplica un algoritmo de multiway merge sort que fusione los 10 archivos en uno solo ordenado.
  */
 
 /* EL ALGORITMO DE FUSION NATURAL
