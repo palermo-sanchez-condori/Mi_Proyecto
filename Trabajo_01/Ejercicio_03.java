@@ -15,6 +15,10 @@
  *   1. Se divide en [38, 27, 43] y [3, 9, 82, 10]
  *   2. Se mezclan para obtener [3, 9, 10, 27, 38, 43, 82]
  *
+ * 
+ * 
+ * 
+ *
  * Ejercicio 1
  * Tienes un archivo con 1 millón de números enteros desordenados (más grande que tu memoria RAM).
  *   Ejercicio:
@@ -23,6 +27,12 @@
  *
  * Ordena cada bloque con un algoritmo interno (ej. quicksort).
  *
+ * 
+ * 
+ * 
+ * 
+ * Ejercicio 2
+ * Tienes un archivo de texto muy grande (varios GB) que no cabe en memoria
 Usa un algoritmo de mezcla balanceada (k-way merge) para unir los bloques en un archivo final ordenado.
     Un banco recibe 10 archivos de transacciones diarios (cada uno con 100 MB).
 Ejercicio:
@@ -31,6 +41,11 @@ Ordena todas las transacciones por fecha.
 
 Aplica un algoritmo de multiway merge sort que fusione los 10 archivos en uno solo ordenado.
  */
+
+
+
+
+ 
 
 /* EL ALGORITMO DE FUSION NATURAL
  *
