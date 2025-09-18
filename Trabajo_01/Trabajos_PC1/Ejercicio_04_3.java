@@ -1,3 +1,4 @@
+package Trabajos_PC1;
 /*
  * Problema 1:
    Dado un archivo de texto con una lista de números enteros desordenados (uno por línea), 

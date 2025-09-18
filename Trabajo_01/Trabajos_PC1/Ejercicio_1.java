@@ -1,3 +1,4 @@
+package Trabajos_PC1;
 import java.util.Scanner;
 
 public class Ejercicio_1 {

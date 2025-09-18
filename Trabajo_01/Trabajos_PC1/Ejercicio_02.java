@@ -1,3 +1,4 @@
+package Trabajos_PC1;
 public class Ejercicio_02 {
 
     // Método para ordenar un arreglo usando ordenamiento por inserción

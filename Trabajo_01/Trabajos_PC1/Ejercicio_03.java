@@ -1,3 +1,4 @@
+package Trabajos_PC1;
 
 
 /* EL ALGORITMO DE MEZCLA DIRECTA

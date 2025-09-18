@@ -1,47 +1,26 @@
+package Trabajos_PC1;
 import java.io.*;
 import java.util.*;
 
-public class MetodoPolifasico {
+public class MezclaEquilibradaMultiple {
 
-    // Calcula la secuencia de Fibonacci para distribuir los runs
-    public static int[] fibonacciDistribucion(int totalRuns, int numArchivos) {
-        int[] fib = new int[numArchivos];
-        fib[0] = 1;
-        fib[1] = 1;
-        for (int i = 2; i < numArchivos; i++) {
-            fib[i] = fib[i - 1] + fib[i - 2];
-        }
-        // Ajusta la distribución para que la suma sea igual o mayor al total de runs
-        while (Arrays.stream(fib).sum() < totalRuns) {
-            for (int i = 0; i < numArchivos; i++) {
-                fib[i]++;
-            }
-        }
-        return fib;
-    }
-
-    // Distribuye los runs en los archivos según la secuencia de Fibonacci
-    public static void distribuirRunsPolifasico(String archivoOriginal, String[] archivosAuxiliares, int[] distribucion, int runSize) throws IOException {
+    // Divide el archivo original en runs ordenados y los distribuye en archivos auxiliares
+    public static void distribuirRuns(String archivoOriginal, String[] archivosAuxiliares, int runSize) throws IOException {
         BufferedReader reader = new BufferedReader(new FileReader(archivoOriginal));
         List<Integer> buffer = new ArrayList<>();
-        int archivoActual = 0, runActual = 0;
+        int archivoActual = 0;
         String linea;
         while ((linea = reader.readLine()) != null) {
             buffer.add(Integer.parseInt(linea));
             if (buffer.size() == runSize) {
-                Collections.sort(buffer);
-                if (runActual < distribucion[archivoActual]) {
-                    escribirRun(archivosAuxiliares[archivoActual], buffer, true);
-                    runActual++;
-                }
+                Collections.sort(buffer); // Ordena el run
+                escribirRun(archivosAuxiliares[archivoActual], buffer, true);
                 buffer.clear();
-                if (runActual >= distribucion[archivoActual]) {
-                    archivoActual++;
-                    runActual = 0;
-                }
+                archivoActual = (archivoActual + 1) % archivosAuxiliares.length; // Rota entre archivos
             }
         }
-        if (!buffer.isEmpty() && archivoActual < archivosAuxiliares.length) {
+        // Escribe el último run si queda algo
+        if (!buffer.isEmpty()) {
             Collections.sort(buffer);
             escribirRun(archivosAuxiliares[archivoActual], buffer, true);
         }
@@ -57,11 +36,12 @@ public class MetodoPolifasico {
         writer.close();
     }
 
-    // Mezcla polifásica: mezcla los runs de los archivos auxiliares en el archivo de salida
-    public static void mezclarPolifasico(String[] archivosEntrada, String archivoSalida) throws IOException {
+    // Mezcla los runs de los archivos auxiliares en un archivo de salida
+    public static void mezclarRuns(String[] archivosEntrada, String archivoSalida) throws IOException {
         PriorityQueue<ElementoRun> pq = new PriorityQueue<>();
         BufferedReader[] readers = new BufferedReader[archivosEntrada.length];
 
+        // Inicializa los lectores y la cola de prioridad
         for (int i = 0; i < archivosEntrada.length; i++) {
             readers[i] = new BufferedReader(new FileReader(archivosEntrada[i]));
             String linea = readers[i].readLine();
@@ -72,6 +52,7 @@ public class MetodoPolifasico {
 
         BufferedWriter writer = new BufferedWriter(new FileWriter(archivoSalida));
 
+        // Mezcla los runs
         while (!pq.isEmpty()) {
             ElementoRun min = pq.poll();
             writer.write(min.valor + "\n");
@@ -81,6 +62,7 @@ public class MetodoPolifasico {
             }
         }
 
+        // Cierra los archivos
         for (BufferedReader r : readers) r.close();
         writer.close();
     }
@@ -101,19 +83,15 @@ public class MetodoPolifasico {
     // Ejemplo de uso
     public static void main(String[] args) throws IOException {
         String archivoOriginal = "datos.txt";
-        String[] archivosAuxiliares = {"aux1.txt", "aux2.txt", "aux3.txt"};
+        String[] archivosAuxiliares = {"aux1.txt", "aux2.txt"};
         String archivoOrdenado = "ordenado.txt";
         int runSize = 5; // Tamaño de cada run
-        int totalRuns = 13; // Total de runs a distribuir
 
-        // Paso 1: Calcular distribución polifásica (Fibonacci)
-        int[] distribucion = fibonacciDistribucion(totalRuns, archivosAuxiliares.length);
+        // Paso 1: Distribuir runs
+        distribuirRuns(archivoOriginal, archivosAuxiliares, runSize);
 
-        // Paso 2: Distribuir runs según la secuencia de Fibonacci
-        distribuirRunsPolifasico(archivoOriginal, archivosAuxiliares, distribucion, runSize);
-
-        // Paso 3: Mezclar polifásicamente los runs
-        mezclarPolifasico(archivosAuxiliares, archivoOrdenado);
+        // Paso 2: Mezclar runs
+        mezclarRuns(archivosAuxiliares, archivoOrdenado);
 
         System.out.println("Archivo ordenado generado: " + archivoOrdenado);
     }

@@ -1,3 +1,4 @@
+package Trabajos_PC1;
 public class Ejercicio_04_2 {
     public static void naturalMergeSort(int[] arr) {
         int n = arr.length;

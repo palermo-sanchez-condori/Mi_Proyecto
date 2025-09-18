@@ -1,3 +1,4 @@
+package Trabajos_PC1;
 /*
  * El Algoritmo de Mezcla Equilibrada Múltiple es una técnica utilizada en ordenación externa, especialmente cuando los datos a ordenar no caben en memoria principal y deben procesarse en archivos o cintas.
 
