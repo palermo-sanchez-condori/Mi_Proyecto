@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 /*tablas hash
   Las tablas hash son estructuras de datos que permiten almacenar y recuperar información de manera eficiente.
   Utilizan una función hash para calcular un índice en una tabla, donde se almacena el valor asociado a una clave.
@@ -19,3 +21,66 @@
  * - Eficiencia: debe ser rápida de calcular para no afectar el rendimiento de la tabla hash.
  * - Simplicidad: la función debe ser fácil de implementar y entender.
  */
+// Ejemplo básico de tabla hash con direccionamiento abierto
+class TablaHash {
+    private int[] tabla;
+    private int tamaño;
+
+    public TablaHash(int tamaño) {
+        this.tamaño = tamaño;
+        tabla = new int[tamaño];
+        Arrays.fill(tabla, -1); // -1 indica celda vacía
+    }
+
+    // Función hash simple (división)
+    private int funcionHash(int clave) {
+        return clave % tamaño;
+    }
+
+    // Insertar un valor en la tabla hash
+    public void insertar(int clave) {
+        int indice = funcionHash(clave);
+        int original = indice;
+        while (tabla[indice] != -1) { // Si hay colisión, busca la siguiente celda
+            indice = (indice + 1) % tamaño;
+            if (indice == original) {
+                System.out.println("Tabla llena, no se puede insertar " + clave);
+                return;
+            }
+        }
+        tabla[indice] = clave;
+    }
+
+    // Buscar un valor en la tabla hash
+    public boolean buscar(int clave) {
+        int indice = funcionHash(clave);
+        int original = indice;
+        while (tabla[indice] != -1) {
+            if (tabla[indice] == clave) return true;
+            indice = (indice + 1) % tamaño;
+            if (indice == original) break;
+        }
+        return false;
+    }
+
+    // Mostrar la tabla hash
+    public void mostrar() {
+        System.out.println("Tabla hash:");
+        for (int i = 0; i < tamaño; i++) {
+            System.out.println(i + ": " + tabla[i]);
+        }
+    }
+
+    // Ejemplo de uso
+    public static void main(String[] args) {
+        TablaHash th = new TablaHash(7);
+        th.insertar(10);
+        th.insertar(20);
+        th.insertar(5);
+        th.insertar(15);
+        th.mostrar();
+
+        System.out.println("¿Está 20? " + th.buscar(20));
+        System.out.println("¿Está 99? " + th.buscar(99));
+    }
+}
