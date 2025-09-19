@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.Scanner;
 
 /*tablas hash
   Las tablas hash son estructuras de datos que permiten almacenar y recuperar información de manera eficiente.
@@ -73,14 +74,24 @@ class TablaHash {
 
     // Ejemplo de uso
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
         TablaHash th = new TablaHash(7);
-        th.insertar(10);
-        th.insertar(20);
-        th.insertar(5);
-        th.insertar(15);
+        System.out.println("cuantos valores quieres ingresar?");
+        int valor = sc.nextInt();
+        for (int i = 0 ; i < valor;i++){
+            System.out.println("ingrese el valor "+(i+1)+":");
+            int num = sc.nextInt();
+            th.insertar(num);
+        }
         th.mostrar();
-
-        System.out.println("¿Está 20? " + th.buscar(20));
-        System.out.println("¿Está 99? " + th.buscar(99));
+        String res;
+        do{
+            System.out.println("Que valor quieres buscar?");
+            int bus = sc.nextInt();
+            System.out.println("el valor que usted busco es "+th.buscar(bus));
+            System.out.println("quieres buscar otro numero?(si/no)");
+            res = sc.nextLine();
+            res = sc.nextLine();
+        }while(res.equals("si"));
     }
 }
