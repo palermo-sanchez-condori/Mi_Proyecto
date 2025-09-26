@@ -1,25 +1,22 @@
 /*
- * Realización de una Tabla Hash
- * Implementar una tabla hash con una función de dispersión simple y manejo de colisiones mediante direccionamiento abierto.
- * El programa debe permitir insertar, buscar y mostrar los elementos en la tabla.
- *  Utilizar un tamaño fijo para la tabla hash y manejar colisiones mediante sondeo lineal.
- * Incluir comentarios que expliquen las características de una buena función de dispersión.
- * Características de una buena función de dispersión:
- * - Uniformidad: Distribuye las claves de manera uniforme en la tabla para minimizar colisiones.
- * - Determinismo: La misma clave siempre produce el mismo índice.
- * - Eficiencia: Debe ser rápida de calcular para no afectar el rendimiento de la tabla hash.
- * - Simplicidad: La función debe ser fácil de implementar y entender.
- * Ejemplo de función de dispersión simple: función de módulo (clave % tamaño de la tabla).
- * Ejemplo de manejo de colisiones: sondeo lineal (buscar la siguiente celda disponible).
- * Ejemplo de uso:
- * - Insertar claves: 10, 20, 30, 25
- *  Buscar claves: 20 (debe devolver true), 15 (debe devolver false)
- * - Mostrar la tabla hash después de las inserciones.
- * Nota: Asegúrese de incluir comentarios en el código que expliquen cómo funciona la función de dispersión y cómo se manejan las colisiones.
  * 
+ * Direccionamiento Enlazado (Encadenamiento)
+ * Una técnica común para manejar colisiones en tablas hash es el direccionamiento enlazado (encadenamiento).
+ * En este enfoque, cada posición de la tabla hash contiene una lista de elementos que colisionaron en esa posición.
+ * Cuando se produce una colisión, el nuevo elemento se agrega a la lista en la posición correspondiente.
+ * Esto permite almacenar múltiples elementos en la misma posición de la tabla sin perder información.
  * 
+ * Ventajas del direccionamiento enlazado:
+ * - Manejo eficiente de colisiones: Almacena múltiples elementos en la misma posición sin necesidad de rehashing.
+ * - Flexibilidad: Permite insertar elementos de manera dinámica sin preocuparse por el tamaño de la tabla.
+ * - Simplicidad: La implementación es más sencilla en comparación con otras técnicas de manejo de colisiones.
+ * - No hay necesidad de un tamaño fijo para la tabla: La tabla puede crecer dinámicamente según sea necesario.
+ * - Eficiencia en la inserción: La inserción de nuevos elementos es rápida, ya que solo se agrega a la lista.
+ * 
+ * Desventajas del direccionamiento enlazado:
+ * - Mayor uso de memoria: Cada elemento requiere espacio adicional para los punteros de la lista
+ * - Rendimiento variable: Si muchas colisiones ocurren, las listas pueden volverse largas, afectando el tiempo de búsqueda.
+ * - Complejidad en la implementación: Requiere manejo de listas enlazadas, lo que puede complicar el código.
  */
 
-public class Ejercicio_02 {
-    
-}
+
