@@ -8,3 +8,9 @@
  * 6. Búsqueda ternaria
  * 7. Búsqueda por Fibonacci
  */
+
+ //me falta agregar el codigo para los algoritomos de busqueda externa
+
+
+ //me falta añadir el enlace del video:
+ 
