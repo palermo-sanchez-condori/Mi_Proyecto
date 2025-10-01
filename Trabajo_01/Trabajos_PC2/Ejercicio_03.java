@@ -23,4 +23,36 @@
 
 
  //me falta añadir el enlace del video:
- 
+ public class Ejercicio_03{
+    public static int busquedaPorBloques(int[] arr, int x, int bloqueTam) {
+        int n = arr.length;
+        int inicio = 0;
+
+        // Buscar el bloque donde podría estar el elemento
+        while (inicio < n && arr[Math.min(inicio + bloqueTam - 1, n - 1)] < x) {
+            inicio += bloqueTam;
+        }
+
+        // Búsqueda secuencial dentro del bloque
+        for (int i = inicio; i < Math.min(inicio + bloqueTam, n); i++) {
+            if (arr[i] == x) {
+                return i; // Retorna la posición si lo encuentra
+            }
+        }
+        return -1; // Retorna -1 si no lo encuentra
+    }
+    // Ejemplo de uso
+    public static void main(String[] args) {
+        int[] arreglo = {2, 4, 7, 10, 15, 20, 25, 30, 35, 40};
+        int elementoBuscado = 25;
+        int tamBloque = 3;
+
+        int resultado = busquedaPorBloques(arreglo, elementoBuscado, tamBloque);
+
+        if (resultado != -1) {
+            System.out.println("Elemento encontrado en la posición: " + resultado);
+        } else {
+            System.out.println("Elemento no encontrado.");
+        }
+    }
+ }
