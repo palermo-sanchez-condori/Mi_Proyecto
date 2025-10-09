@@ -1,3 +1,5 @@
+import java.util.*;
+
 //me falta agregar concepto  y un ejemplo
 /*
  * Busqueda externa Listas Invertidas son estructuras de datos que permiten
@@ -20,5 +22,42 @@
  * tiempo, ya que permiten realizar búsquedas rápidas sin necesidad de escanear
  * todos los documentos.
  */
-//me falta agregar el codigo
+public class Ejercicio_04 {
+    // Mapa que representa la lista invertida: término -> lista de documentos
+    private Map<String, List<Integer>> listaInvertida = new HashMap<>();
+
+    // Indexa un documento (simulado por un ID y su contenido)
+    public void indexarDocumento(int idDocumento, String contenido) {
+        String[] palabras = contenido.toLowerCase().split("\\W+");
+        for (String palabra : palabras) {
+            listaInvertida
+                .computeIfAbsent(palabra, k -> new ArrayList<>())
+                .add(idDocumento);
+        }
+    }
+
+    // Busca documentos que contienen el término dado
+    public List<Integer> buscar(String termino) {
+        return listaInvertida.getOrDefault(termino.toLowerCase(), Collections.emptyList());
+    }
+
+    // Ejemplo de uso
+    public static void main(String[] args) {
+        Ejercicio_04 buscador = new Ejercicio_04();
+
+        // Indexar documentos
+        buscador.indexarDocumento(1, "Java es un lenguaje de programación");
+        buscador.indexarDocumento(2, "Listas invertidas permiten búsquedas rápidas");
+        buscador.indexarDocumento(3, "La programación eficiente usa estructuras de datos");
+
+        // Buscar documentos que contienen el término "programación"
+        List<Integer> resultados = buscador.buscar("programación");
+        System.out.println("Documentos que contienen 'programación': " + resultados);
+
+        // Buscar documentos que contienen el término "listas"
+        resultados = buscador.buscar("listas");
+        System.out.println("Documentos que contienen 'listas': " + resultados);
+    }
+}
+
 //me falta el enlace del vidde
