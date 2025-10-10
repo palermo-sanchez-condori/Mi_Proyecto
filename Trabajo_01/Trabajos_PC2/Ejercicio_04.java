@@ -60,4 +60,12 @@ public class Ejercicio_04 {
     }
 }
 
-//me falta el enlace del vidde
+/* 
+las busquedas en listas invertidas son eficientes porque permiten acceder directamente a los documentos relevantes sin necesidad de escanear todo el conjunto de datos. Al tener un índice que mapea términos a documentos, se reduce significativamente el tiempo de búsqueda, especialmente en grandes volúmenes de información. Esto es particularmente útil en aplicaciones como motores de búsqueda y bases de datos, donde la rapidez y eficiencia son cruciales para una buena experiencia del usuario.
+se aplica en diferentes aplicaciones como motores de búsqueda (Google, Bing), sistemas de gestión de bases de datos (MySQL, PostgreSQL), sistemas de recuperación de información (bibliotecas digitales, archivos) y aplicaciones de análisis de texto (análisis de sentimientos, minería de datos).
+unos ejemplos de listas invertidas son:
+1. Motor de búsqueda web: Google utiliza listas invertidas para indexar páginas web y permitir búsquedas rápidas.
+2. Sistemas de gestión de bases de datos: MySQL y PostgreSQL utilizan listas invertidas para optimizar consultas de texto completo.
+3. Bibliotecas digitales: Sistemas como JSTOR o Google Books utilizan listas invertidas para facilitar la búsqueda de libros y artículos.
+
+ */
