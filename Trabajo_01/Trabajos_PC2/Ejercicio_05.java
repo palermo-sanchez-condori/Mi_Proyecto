@@ -1,5 +1,61 @@
-//agregar codigo
-//me falta agregar concepto  y un ejemplo
+import java.util.*;
+
+class Libro {
+    String titulo;
+    String autor;
+    int año;
+
+    Libro(String titulo, String autor, int año) {
+        this.titulo = titulo;
+        this.autor = autor;
+        this.año = año;
+    }
+
+    @Override
+    public String toString() {
+        return titulo + " - " + autor + " (" + año + ")";
+    }
+}
+
+public class Ejercicio_05 {
+    // Multilista: género -> lista de libros
+    private Map<String, List<Libro>> multilista = new HashMap<>();
+
+    // Agrega un libro a un género específico
+    public void agregarLibro(String genero, Libro libro) {
+        multilista.computeIfAbsent(genero, k -> new LinkedList<>()).add(libro);
+    }
+
+    // Busca libros por género
+    public List<Libro> buscarPorGenero(String genero) {
+        return multilista.getOrDefault(genero, Collections.emptyList());
+    }
+
+    public static void main(String[] args) {
+        Ejercicio_05 biblioteca = new Ejercicio_05();
+
+        // Agregar libros
+        biblioteca.agregarLibro("Ficción", new Libro("Cien años de soledad", "Gabriel García Márquez", 1967));
+        biblioteca.agregarLibro("Ficción", new Libro("El Principito", "Antoine de Saint-Exupéry", 1943));
+        biblioteca.agregarLibro("Ciencia", new Libro("Breve historia del tiempo", "Stephen Hawking", 1988));
+        biblioteca.agregarLibro("Historia", new Libro("Sapiens", "Yuval Noah Harari", 2011));
+
+        // Buscar libros de Ficción
+        List<Libro> ficcion = biblioteca.buscarPorGenero("Ficción");
+        System.out.println("Libros de Ficción:");
+        for (Libro libro : ficcion) {
+            System.out.println(libro);
+        }
+
+        // Buscar libros de Ciencia
+        List<Libro> ciencia = biblioteca.buscarPorGenero("Ciencia");
+        System.out.println("\nLibros de Ciencia:");
+        for (Libro libro : ciencia) {
+            System.out.println(libro);
+        }
+    }
+}
+
 /*
  * busqueda externa Multilistas son:
  * estructuras de datos que permiten organizar y gestionar grandes conjuntos de datos que no caben en la memoria principal, utilizando múltiples listas enlazadas para almacenar y acceder a los datos de manera eficiente.
@@ -16,4 +72,3 @@
  * 3. Sistemas de archivos: Algunos sistemas de archivos utilizan multilistas para gestionar la ubicación y el acceso a archivos almacenados en discos duros.
  * 
  */
-//me falta enlace 
