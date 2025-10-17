@@ -72,3 +72,5 @@ public class Ejercicio_05 {
  * 3. Sistemas de archivos: Algunos sistemas de archivos utilizan multilistas para gestionar la ubicación y el acceso a archivos almacenados en discos duros.
  * 
  */
+
+ //No creo que vaya en mi proyecto ya que es un poco complejo y no se adapta a lo que estoy haciendo.
