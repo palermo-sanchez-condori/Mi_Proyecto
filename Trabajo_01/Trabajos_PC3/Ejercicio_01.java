@@ -29,13 +29,6 @@ public class QuickSort {
         quickSortRecursivo(arr, 0, arr.length - 1);
     }
 
-    /**
-     * El método recursivo principal de QuickSort.
-     *
-     * @param arr   El arreglo a ordenar.
-     * @param bajo  El índice inicial (low).
-     * @param alto  El índice final (high).
-     */
     private void quickSortRecursivo(int[] arr, int bajo, int alto) {
         // Condición base: si el índice bajo es mayor o igual al alto,
         // la sublista tiene 0 o 1 elemento, por lo tanto, ya está ordenada.
@@ -51,17 +44,7 @@ public class QuickSort {
         }
     }
 
-    /**
-     * Este método toma el último elemento como pivote,
-     * coloca el pivote en su posición correcta en el arreglo ordenado,
-     * y coloca todos los elementos menores que el pivote a su izquierda,
-     * y todos los mayores a su derecha.
-     *
-     * @param arr   El arreglo.
-     * @param bajo  Índice inicial de la sublista.
-     * @param alto  Índice final de la sublista (usado como pivote).
-     * @return El índice donde el pivote ha sido colocado.
-     */
+    
     private int particionar(int[] arr, int bajo, int alto) {
         // Seleccionamos el último elemento como pivote.
         int pivote = arr[alto];
