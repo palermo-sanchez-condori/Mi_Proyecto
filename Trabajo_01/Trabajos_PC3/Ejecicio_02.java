@@ -36,7 +36,7 @@ public class BusquedaLineal {
         return -1;
     }
 
-    // --- Método main para probar el código ---
+    
     public static void main(String[] args) {
         BusquedaLineal bl = new BusquedaLineal();
 
