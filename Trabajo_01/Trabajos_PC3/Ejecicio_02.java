@@ -18,13 +18,7 @@
  */
 public class BusquedaLineal {
 
-    /**
-     * Realiza una búsqueda lineal en un arreglo.
-     *
-     * @param arr    El arreglo donde buscar.
-     * @param target El número (objetivo) que queremos encontrar.
-     * @return El índice del 'target' si se encuentra, de lo contrario -1.
-     */
+    
     public int busquedaLineal(int[] arr, int target) {
         // Recorremos cada elemento del arreglo usando su índice
         for (int i = 0; i < arr.length; i++) {
@@ -40,7 +34,7 @@ public class BusquedaLineal {
         return -1;
     }
 
-    // --- Método main para probar el código ---
+    
     public static void main(String[] args) {
         BusquedaLineal bl = new BusquedaLineal();
 
