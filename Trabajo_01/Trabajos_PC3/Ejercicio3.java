@@ -15,6 +15,31 @@
  * La recursividad indirecta permite una mayor flexibilidad en la resolución de problemas.
  */
 //codigo
+import java.util.Scanner;
+
+public class EjemploRecursividad {
+    
+    // Método recursivo para calcular el factorial de un número
+    public static int factorial(int n) {
+        if (n == 0 || n == 1) {
+            return 1; // Caso base
+        } else {
+            return n * factorial(n - 1); // Llamada recursiva
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.print("Ingrese un número: ");
+        int numero = sc.nextInt();
+        
+        int resultado = factorial(numero);
+        System.out.println("El factorial de " + numero + " es: " + resultado);
+        
+        sc.close();
+    }
+}
 
 //enlace
 
