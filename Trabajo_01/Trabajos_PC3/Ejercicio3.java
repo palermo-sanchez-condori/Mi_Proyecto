@@ -17,7 +17,7 @@
 //codigo
 import java.util.Scanner;
 
-public class EjemploRecursividad {
+public class Ejercicio3 {
     
     // Método recursivo para calcular el factorial de un número
     public static int factorial(int n) {
@@ -39,10 +39,4 @@ public class EjemploRecursividad {
         
         sc.close();
     }
-}
-
-//enlace
-
-public class Ejercicio3 {
-    
 }
