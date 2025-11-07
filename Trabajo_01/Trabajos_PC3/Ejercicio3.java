@@ -1,5 +1,16 @@
 //concepto
 /*
+* Recursividad directa:
+* es cuando una función se llama a sí misma para resolver un problema.
+* Esto permite dividir el problema en subproblemas más pequeños y manejables.
+* Un ejemplo clásico es el cálculo del factorial de un número:
+* - La función "factorial" recibe un número n.
+* - Si n es 0 o 1, devuelve 1 (caso base).
+* - Si n es mayor que 1, la función se llama a sí misma con
+*   el valor n-1 y multiplica el resultado por n.
+* Este proceso continúa hasta que se alcanza el caso base.
+*
+ *
  * Recursividad indirecta:
  * funciona cuando una función llama a otra función,
  * y esta a su vez llama a la primera.
