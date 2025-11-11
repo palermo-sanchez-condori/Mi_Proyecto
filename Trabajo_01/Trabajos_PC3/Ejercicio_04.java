@@ -1,8 +1,11 @@
 
 //concepto
-// enlace del video de la comprovacion.
-// funcionamiento del codigo.
 /*
- * Ejercicio 04: Crea un programa que solicite al usuario ingresar una cadena de texto y luego
- * muestre la misma cadena pero con las palabras en orden inverso.
+ * backtracking es una técnica de búsqueda utilizada para resolver problemas combinatorios,
+ * donde se exploran todas las posibles soluciones de manera sistemática.
+ * El objetivo es construir soluciones parciales y retroceder (backtrack)
+ * cuando se determina que una solución parcial no puede conducir a una solución completa válida.
+ * El backtracking se utiliza comúnmente en problemas como el sudoku,
+ * el problema de las n-reinas y la generación de combinaciones y permutaciones.
+ * 
  */
