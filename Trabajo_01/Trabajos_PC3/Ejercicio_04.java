@@ -25,4 +25,6 @@
  * Se seleccionan los objetos de manera óptima, eligiendo aquellos que proporcionan el mayor valor
  * sin exceder la capacidad de la mochila.
  * 
+ * 
+ * Me falta otro ejemplo de la seleccion optima
  */
