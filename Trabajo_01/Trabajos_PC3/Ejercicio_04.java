@@ -26,6 +26,4 @@
  * sin exceder la capacidad de la mochila.
  * 
  * 
- * Me falta otro ejemplo de la seleccion optima
- * el codigo no va hacer nesesario
  */
